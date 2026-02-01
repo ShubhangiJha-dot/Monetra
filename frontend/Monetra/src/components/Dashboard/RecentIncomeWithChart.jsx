@@ -31,7 +31,7 @@ const RecentIncomeWithChart = ({data,totalIncome}) => {
             // data={chartData}
             data={data}
             label="TotalIncome"
-            totalAmount={`$${totalIncome}`}
+            totalAmount={`₹${totalIncome}`}
             showTextAnchor
             colors={COLORS}
         />

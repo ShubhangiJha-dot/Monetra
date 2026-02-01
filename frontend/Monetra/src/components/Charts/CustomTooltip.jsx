@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload, labelKey }) => {
         <p className="text-sm text-gray-600">
           Amount:{" "}
           <span className="text-sm font-medium text-gray-900">
-            ${data.amount}
+            ₹{data.amount}
           </span>
         </p>
       </div>

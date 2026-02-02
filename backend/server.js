@@ -11,13 +11,29 @@ const dashboardRoutes=require("./routes/dashboardRoutes")
 const app=express()
 
 //middleware to handle CORS
+// app.use(
+//     cors({
+//         origin:process.env.CLIENT_URL ||"*",
+//         methods: ["GET","POST","PUT","DELETE"],
+//         allowedHeaders: ["Content-Type","Authorization"],
+//     })
+// )
+
 app.use(
-    cors({
-        origin:process.env.CLIENT_URL ||"*",
-        methods: ["GET","POST","PUT","DELETE"],
-        allowedHeaders: ["Content-Type","Authorization"],
-    })
-)
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://monetra-nine.vercel.app"
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
+  })
+);
+
+// 👇 THIS IS CRITICAL FOR PREFLIGHT
+app.options("*", cors());
+
 
 app.use(express.json())
 connectDB()

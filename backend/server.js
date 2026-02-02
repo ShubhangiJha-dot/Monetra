@@ -32,7 +32,7 @@ app.use(
 );
 
 // 👇 THIS IS CRITICAL FOR PREFLIGHT
-app.options("*", cors());
+app.options("/*", cors());
 
 
 app.use(express.json())

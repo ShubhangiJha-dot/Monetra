@@ -31,8 +31,8 @@ app.use(
   })
 );
 
-// 👇 THIS IS CRITICAL FOR PREFLIGHT
-app.options("/*", cors());
+// // 👇 THIS IS CRITICAL FOR PREFLIGHT
+// app.options("/*", cors());
 
 
 app.use(express.json())
